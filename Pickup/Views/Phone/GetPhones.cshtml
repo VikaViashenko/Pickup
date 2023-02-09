@@ -1,0 +1,19 @@
+﻿@model List<Pickup.Domain.Entity.Phone>
+
+@{
+    ViewBag.Title = "Title";
+    Layout = "_Layout";
+}
+
+@foreach(var phone in Model)
+{
+    <p>@phone.Name</p>
+    <p>@phone.Price</p>
+    <p>@phone.Brand</p>
+    <p>@phone.Description</p>
+    <p>@phone.Color</p>
+    <p>@phone.Features</p>
+    <p>@phone.BatteryCapacity</p>
+    <p>@phone.Series</p>
+    <p>@phone.Release</p>
+}
