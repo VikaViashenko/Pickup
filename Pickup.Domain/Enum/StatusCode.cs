@@ -8,6 +8,8 @@ namespace Pickup.Domain.Enum
 {
     public enum StatusCode
     {
+        UserNotFound = 0,
+        PhoneNotFound = 10,
         OK = 200,
         InternalServerError = 500
     }

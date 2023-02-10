@@ -20,5 +20,7 @@ namespace Pickup.DAL.Interfaces
 
         //bool Delete(T entity);
         Task<bool> Delete(T entity);
+
+        Task<T> Update(T entity);
     }
 }

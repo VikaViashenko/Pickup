@@ -48,5 +48,13 @@ namespace Pickup.DAL.Repositories
         {
             return await _db.Phone.ToListAsync();
         }
+
+        public async Task<Phone> Update(Phone entity)
+        {
+            _db.Phone.Update(entity);
+            await _db.SaveChangesAsync();
+
+            return entity;
+        }
     }
 }
