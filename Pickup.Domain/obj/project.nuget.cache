@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "M+mVmIjFw77FdaDdLXe1h3iIi+xf/GREQTpjcWozriDr2lTqplipTZc75RsPefInrpa5Grd8LkUH+SSweuiyRw==",
+  "dgSpecHash": "JE6sxzFVokchmIesmDhn9t+e10516uCZ9Lnl9UTHyScl2kvr4jFcrvnsxJ9pzUb/oT1XwGEuwoRe5tPw+LkJ7w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

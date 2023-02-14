@@ -1,9 +1,6 @@
-﻿using Pickup.Domain.Enum;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pickup.Domain.ViewModels.Phone
 {
@@ -17,10 +14,16 @@ namespace Pickup.Domain.ViewModels.Phone
 
         public string Color { get; set; }
 
+        public string Description { get; set; }
+
         public int BatteryCapacity { get; set; }
 
         public decimal Price { get; set; }
 
+        public int Release { get; set; }
+
         public string Features { get; set; }
+
+        public IFormFile Avatar { get; set; }
     }
 }

@@ -5,15 +5,112 @@
     Layout = "_Layout";
 }
 
-@foreach(var phone in Model)
+
+<style>
+    .product-buttons-group {
+        text-align: right;
+        padding: 10px;
+    }
+</style>
+
+<div class="product-buttons-group">
+    <button class="btn btn-danger" id='hideProductsId'>Приховати</button>
+    <button class='btn btn-success' id='showProductsId'>Показати</button>
+</div>
+
+<div style="padding: 10px;"></div>
+@if (Model.Count == 0)
 {
-    <p>@phone.Name</p>
-    <p>@phone.Price</p>
-    <p>@phone.Brand</p>
-    <p>@phone.Description</p>
-    <p>@phone.Color</p>
-    <p>@phone.Features</p>
-    <p>@phone.BatteryCapacity</p>
-    <p>@phone.Series</p>
-    <p>@phone.Release</p>
+    <div class="product col-md-12">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src=""
+                 class="img-fluid rounded-start rounded">
+            </div>
+            <div class="col-md-8">
+                <div class="product-body">
+                    <h5 class="product-title text-center">На жаль, зараз в нас немає що запропонувати</h5>
+                    <p class="product-text">
+                        Скоро появляться нові телефони!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 10px;"></div>
+    <div class="product text-center">
+        <div class="product-header">
+            <ul class="nav nav-pills product-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+        <div class="product-body">
+            <h5 class="product-title">Special title treatment</h5>
+            <p class="product-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var phone in Model)
+        {
+            <div class="row row-cols-1 col-md-4 text-center">
+                <div class="col" style="padding: 10px;">
+                    <div class="product">
+                        <img src="" class="product-img-top" alt="@phone.Name">
+                        <div class="product-body">
+                            <h5 class="product-title">@phone.Name</h5>
+                            <p class="product-text">@phone.Description</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Ціна: @phone.Price грн</li>
+                            <li class="list-group-item">Напрям: @phone.Features</li>
+                        </ul>
+                        <div class="product-body">
+                            <a asp-controller="Phone" asp-action="GetPhone" asp-route-id="@phone.id" class="product-link">Перейти</a>
+                            <a asp-controller="" asp-action="Add" asp-route-id="@phone.id" class="product-link">Добавити</a>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <hr />
+                                <a asp-controller="Phone" asp-action="Delete" asp-route-id="@phone.id" class="btn btn-danger">Видалити</a>
+                                <a asp-controller="Phone" asp-action="Save" asp-route-id="@phone.id" class="btn btn-primary">Редагувати</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@section pageScripts {
+    <script>
+        const hideProductElement = $('#hideProductsId');
+        const showProductElement = $('#showProductsId');
+        const productElement = $('.product');
+
+        const interval = 2000; // затримка в 2 секунди
+
+        hideProductElement.click(function () {
+            hideProductElement.hide(interval);
+            showProductElement.show(interval);
+            productElement.hide(interval);
+        });
+
+        showProductElement.click(function () {
+            hideProductElement.show(interval);
+            showProductElement.hide(interval);
+            productElement.show(interval);
+        });
+    </script>
 }

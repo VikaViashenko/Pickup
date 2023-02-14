@@ -7,6 +7,7 @@ using Pickup.Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,9 +22,9 @@ namespace Pickup.Service.Implementations
             _phoneRepository = phoneRepository;
         }
 
-        public async Task<IBaseRepository<Phone>> GetPhone(int id) //пошук об'єкта по id
+        public async Task<IBaseResponse<PhoneViewModel>> GetPhone(int id) //пошук об'єкта по id
         {
-            var baseResponse = new BaseResponse<Phone>();
+            var baseResponse = new BaseResponse<PhoneViewModel>();
             try
             {
                 var phone = await _phoneRepository.Get(id);
@@ -31,19 +32,32 @@ namespace Pickup.Service.Implementations
                 {
                     baseResponse.Decsription = "User not found";
                     baseResponse.StatusCode = StatusCode.UserNotFound;
-                    return (IBaseRepository<Phone>)baseResponse;
+                    return baseResponse;
                 }
-                baseResponse.Data = phone;
-                return (IBaseRepository<Phone>)baseResponse;
+
+                var data = new PhoneViewModel()
+                {
+                    Name = phone.Name,
+                    Brand = phone.Brand,
+                    Color = phone.Color,
+                    BatteryCapacity = phone.BatteryCapacity,
+                    Price = phone.Price,
+                    Release = phone.Release,
+                    Description = phone.Description,
+                    Features = phone.Features.ToString()
+                };
+
+                baseResponse.StatusCode = StatusCode.OK;
+                baseResponse.Data = data;
+                return baseResponse;
             }
             catch (Exception ex)
             {
-                return null;
-                /*return new BaseResponse<Phone>()
+                return new BaseResponse<PhoneViewModel>()
                 {
                     Decsription = $"[GetPhone] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
-                };*/
+                };
             }
         }
 
@@ -77,7 +91,7 @@ namespace Pickup.Service.Implementations
 
 
 
-        public async Task<IBaseRepository<Phone>> GetPhoneByName(string name) //пошук об'єкта по name
+        public async Task<IBaseResponse<Phone>> GetPhoneByName(string name) //пошук об'єкта по name
         {
             var baseResponse = new BaseResponse<Phone>();
             try
@@ -87,19 +101,18 @@ namespace Pickup.Service.Implementations
                 {
                     baseResponse.Decsription = "User not found";
                     baseResponse.StatusCode = StatusCode.UserNotFound;
-                    return (IBaseRepository<Phone>)baseResponse;
+                    return baseResponse;
                 }
                 baseResponse.Data = phone;
-                return (IBaseRepository<Phone>)baseResponse;
+                return baseResponse;
             }
             catch (Exception ex)
             {
-                return null;
-                /*return new BaseResponse<Phone>()
+                return new BaseResponse<Phone>()
                 {
                     Decsription = $"[GetPhoneByName] : {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
-                };*/
+                };
             }
         }
 
@@ -134,7 +147,7 @@ namespace Pickup.Service.Implementations
             }
         }
 
-        public async Task<IBaseResponse<bool>> CreatePhone(PhoneViewModel phoneViewModel)
+        public async Task<IBaseResponse<PhoneViewModel>> CreatePhone(PhoneViewModel phoneViewModel)
         {
             var baseResponse = new BaseResponse<PhoneViewModel>();
             try
@@ -146,20 +159,21 @@ namespace Pickup.Service.Implementations
                     Color = phoneViewModel.Color,
                     BatteryCapacity = phoneViewModel.BatteryCapacity,
                     Price = phoneViewModel.Price,
+                    Release = phoneViewModel.Release,
+                    Description = phoneViewModel.Description,
                     Features = (Features)Convert.ToInt32(phoneViewModel.Features) 
                 };
                 await _phoneRepository.Create(phone);
             }
             catch (Exception ex)
             {
-                return null;/*
                 return new BaseResponse<PhoneViewModel>()
                 {
                     Decsription = $"[CreatePhone]: {ex.Message}",
                     StatusCode = StatusCode.InternalServerError
-                };*/
+                };
             }
-            return (IBaseResponse<bool>)baseResponse;
+            return baseResponse;
         }
 
         public async Task<IBaseResponse<Phone>> Edit(int id, PhoneViewModel model)
@@ -179,6 +193,8 @@ namespace Pickup.Service.Implementations
                 phone.Color = model.Color;
                 phone.BatteryCapacity = model.BatteryCapacity;
                 phone.Price = model.Price;
+                phone.Release = model.Release;
+                phone.Description = model.Description;
 
                 await _phoneRepository.Update(phone);
 
@@ -193,25 +209,6 @@ namespace Pickup.Service.Implementations
                     StatusCode = StatusCode.InternalServerError
                 };
             }
-        }
-
-
-
-
-
-        Task<IBaseResponse<Phone>> IPhoneService.GetPhone(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IBaseResponse<PhoneViewModel>> IPhoneService.CreatePhone(PhoneViewModel phoneViewModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<IBaseResponse<Phone>> IPhoneService.GetPhoneByName(string name)
-        {
-            throw new NotImplementedException();
         }
     }
 }

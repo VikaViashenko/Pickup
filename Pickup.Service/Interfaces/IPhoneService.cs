@@ -1,10 +1,7 @@
 ﻿using Pickup.Domain.Entity;
 using Pickup.Domain.Response;
 using Pickup.Domain.ViewModels.Phone;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Pickup.Service.Interfaces
@@ -13,7 +10,7 @@ namespace Pickup.Service.Interfaces
     {
         Task<IBaseResponse<IEnumerable<Phone>>> GetPhones();
 
-        Task<IBaseResponse<Phone>> GetPhone(int id);
+        Task<IBaseResponse<PhoneViewModel>> GetPhone(int id);
 
         Task<IBaseResponse<PhoneViewModel>> CreatePhone(PhoneViewModel phoneViewModel);
 

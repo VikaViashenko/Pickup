@@ -5,13 +5,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Phone\GetPhone.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Pickup.DAL\Pickup.DAL.csproj" />
     <ProjectReference Include="..\Pickup.Domain\Pickup.Domain.csproj" />
     <ProjectReference Include="..\Pickup.Service\Pickup.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Phone\GetPhone.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Phone\GetPhone.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Phone\GetPhone.cshtml" />
   </ItemGroup>
 
 </Project>

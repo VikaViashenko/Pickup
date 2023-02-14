@@ -1,6 +1,27 @@
-﻿@model Pickup.Domain.Entity.Phone
+﻿@model Pickup.Domain.ViewModels.Phone.PhoneViewModel
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
-<p>@Model.Name</p>
+
+
+<div style="padding: 10px;"></div>
+<div class="product mb-3">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src=""
+                 class="img-fluid rounded-start rounded" alt="@Model?.Name">
+        </div>
+        <div class="col-md-4">
+            <div class="product-body">
+                <h5 class="product-title text-center">@Model?.Name</h5>
+                <p class="product-text"><b>Колір: </b>@Model?.Color</p>
+                <p class="product-text"><b>Ціна: </b>@Model?.Price грн</p>
+                <p class="product-text"><b>Ємність батареї: </b>@Model?.BatteryCapacity мА·год</p>
+                <p class="product-text"><b>Бренд: </b>@Model?.Brand</p>
+                <p class="product-text"><b>Особливість: </b>@Model?.Features</p>
+                <p class="product-text"><small class="text-muted">Реліз: @Model?.Release</small></p>
+            </div>
+        </div>
+    </div>
+</div>

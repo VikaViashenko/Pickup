@@ -6,31 +6,109 @@
     <title>@ViewData["Title"] - Pickup</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/menu.css" />
+    <link rel="stylesheet" href="~/css/product.css" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Pickup</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><span style="color:black; font-family:'Mongolian Baiti'; font-size:30px; background-color:white; border-radius:10px;">Pickup</span></a>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle paragraphLayout active text-black" href="#" data-toggle="dropdown" style="font-family:'Mongolian Baiti'; font-weight: normal;">
+                                    Адмін
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <ul class="nav flex-column paragraphHome">
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link active text-white" asp-controller="Phone" asp-action="Save">
+                                                            Додати телефон
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link active text-white" asp-controller="Admin" asp-action="Index">
+                                                            Користувачі
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle paragraphLayout active text-black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family:'Mongolian Baiti'; font-size:20px; font-weight: normal;">
+                                    Акаунт
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <ul class="nav flex-column paragraphHome">
+                                                    <li class="nav-item" text-center>
+                                                        <a class="nav-link active text-black" asp-controller="Account" asp-action="Register">
+                                                            Реєстрація
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item" text-center>
+                                                        <a class="nav-link active text-black" asp-controller="Account" asp-action="Login">
+                                                            Вхід
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle paragraphLayout active text-black" href="#" data-toggle="dropdown" style="font-family:'Mongolian Baiti'; font-weight: normal;">
+                                    Смартфони
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <ul class="nav flex-column paragraphHome">
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link active text-white" asp-controller="Phone" asp-action="List">
+                                                            Список телефонів
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
                     </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="Account" asp-action="Logout">
+                            <input class="btn btn-danger rounded" style="font-family:'Mongolian Baiti'; font-weight: normal; font-size:20px;" type="submit" value="Вихід" />
+                        </form>
+                    }
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container-fluid col-xl-12">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
@@ -42,7 +120,8 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("pageScripts", required: false)
 </body>
 </html>

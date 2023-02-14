@@ -36,6 +36,7 @@ namespace Pickup
 
             services.AddScoped<IPhoneRepository, PhoneRepository>();
             services.AddScoped<IPhoneService, PhoneService>();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +53,7 @@ namespace Pickup
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseRouting();
