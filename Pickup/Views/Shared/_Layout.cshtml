@@ -29,11 +29,11 @@
                                                 <ul class="nav flex-column paragraphHome">
                                                     <li class="nav-item text-center">
                                                         <a class="nav-link active text-white" asp-controller="Phone" asp-action="Save">
-                                                            Додати телефон
+                                                            Оновити дані
                                                         </a>
                                                     </li>
                                                     <li class="nav-item text-center">
-                                                        <a class="nav-link active text-white" asp-controller="Admin" asp-action="Index">
+                                                        <a class="nav-link active text-white" asp-controller="" asp-action="Index">
                                                             Користувачі
                                                         </a>
                                                     </li>
@@ -85,8 +85,13 @@
                                             <div class="col-md-12">
                                                 <ul class="nav flex-column paragraphHome">
                                                     <li class="nav-item text-center">
-                                                        <a class="nav-link active text-white" asp-controller="Phone" asp-action="List">
+                                                        <a class="nav-link active text-white" asp-controller="Phone" asp-action="GetPhones">
                                                             Список телефонів
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item text-center">
+                                                        <a class="nav-link active text-white" asp-controller="Phone" asp-action="Save">
+                                                            Оновлення
                                                         </a>
                                                     </li>
                                                 </ul>

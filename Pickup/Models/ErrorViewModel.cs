@@ -1,4 +1,4 @@
-using System;
+/*using System;
 
 namespace Pickup.Models
 {
@@ -8,4 +8,4 @@ namespace Pickup.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
-}
+}*/

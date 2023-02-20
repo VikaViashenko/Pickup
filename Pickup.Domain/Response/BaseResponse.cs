@@ -10,7 +10,7 @@ namespace Pickup.Domain.Response
 {
     public class BaseResponse<T> : IBaseResponse<T>
     {
-        public string Decsription { get; set; }
+        public string Description { get; set; }
 
         public StatusCode StatusCode { get; set; }
 
@@ -19,6 +19,7 @@ namespace Pickup.Domain.Response
 
     public interface IBaseResponse<T>
     {
+        string Description { get; }
         StatusCode StatusCode { get; }
         T Data { get; }
     }

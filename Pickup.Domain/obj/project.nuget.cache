@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JE6sxzFVokchmIesmDhn9t+e10516uCZ9Lnl9UTHyScl2kvr4jFcrvnsxJ9pzUb/oT1XwGEuwoRe5tPw+LkJ7w==",
+  "dgSpecHash": "P/4+iZU0zWWwrJQxAho+hLGvZkDd3X256eLHfCpT1FNTI5dfNe3CV0E3ipr5fn7msDUojl3n5HZu0AlTwTJ/dQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",

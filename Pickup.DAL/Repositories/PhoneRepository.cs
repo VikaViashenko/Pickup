@@ -2,11 +2,12 @@
 using Pickup.DAL.Interfaces;
 using Pickup.Domain.Entity;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Pickup.DAL.Repositories
 {
-    public class PhoneRepository : IPhoneRepository
+    public class PhoneRepository : IBaseRepository<Phone>
     {
         private readonly ApplicationDbContext _db;
         
@@ -15,35 +16,21 @@ namespace Pickup.DAL.Repositories
             _db = db;
         }
 
-        public async Task<bool> Create(Phone entity)
+        public async Task Create(Phone entity)
         {
             await _db.Phone.AddAsync(entity);
             await _db.SaveChangesAsync();
-
-            return true;
         }
 
-        public async Task<bool> Delete(Phone entity)
+        public async Task Delete(Phone entity)
         {
             _db.Phone.Remove(entity);
             await _db.SaveChangesAsync();
-
-            return true;
         }
 
-        public async Task<Phone> Get(int id)
+        public IQueryable<Phone> GetAll()
         {
-            return await _db.Phone.FirstOrDefaultAsync(x => x.id == id); //пошук по id з БД
-        }
-
-        public async Task<Phone> GetByName(string name)
-        {
-            return await _db.Phone.FirstOrDefaultAsync(x => x.Name == name); //пошук по Name з БД
-        }
-
-        public async Task<List<Phone>> Select()
-        {
-            return await _db.Phone.ToListAsync();
+            return _db.Phone;
         }
 
         public async Task<Phone> Update(Phone entity)

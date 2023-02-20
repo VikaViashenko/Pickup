@@ -67,7 +67,7 @@ else
             <div class="row row-cols-1 col-md-4 text-center">
                 <div class="col" style="padding: 10px;">
                     <div class="product">
-                        <img src="" class="product-img-top" alt="@phone.Name">
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(phone.Avatar ?? Array.Empty<byte>())" class="product-img-top" alt="@phone.Name">
                         <div class="product-body">
                             <h5 class="product-title">@phone.Name</h5>
                             <p class="product-text">@phone.Description</p>

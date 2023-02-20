@@ -9,17 +9,11 @@ namespace Pickup.DAL.Interfaces
 {
     public interface IBaseRepository<T>
     {
-        //bool Create(T entity);
-        Task<bool> Create(T entity);
+        Task Create(T entity);
 
-        //T Get(int id);
-        Task<T> Get(int id);
+        IQueryable<T> GetAll();
 
-        //IEnumerable<T> Select();
-        Task<List<T>> Select();
-
-        //bool Delete(T entity);
-        Task<bool> Delete(T entity);
+        Task Delete(T entity);
 
         Task<T> Update(T entity);
     }

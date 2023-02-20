@@ -1,8 +1,107 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Головна";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div style="padding: 10px;"></div>
+<div class="product col-md-12">
+    <div class="product-body">
+        <h5 class="product-title text-center">Ви можете порівняти між собою телефони у нас!</h5>
+        <p class="product-text">
+            Лише у нас Ви можете порівняти параметри телефонів, можливості та ціни!
+        </p>
+        <p class="product-text"><small class="text-muted">Pickup</small></p>
+    </div>
 </div>
+
+<div style="padding: 10px;"></div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="col">
+            <div class="product h-100">
+                <img src="https://applecity.com.ua/image/cache/catalog/iphone14pro/iphone-14-pro-purpule-1000x1000.jpg" class="product-img-top" />
+                <div class="product-body text-center">
+                    <h5 class="product-title">iPhone</h5>
+                    <p class="product-text">Apple iPhone 14 Pro — Екран із частотою оновлення 120 Гц. Просунута потрійна камера. Ультраширик із можливістю макрозйомки. Захист за стандартом IP68.</p>
+                </div>
+                <div class="product-footer text-center">
+                    <a asp-controller="Phone" asp-action="Save" asp-route-id="0" class="product-link">Купити</a>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="col">
+        <div class="product h-100">
+            <img src="https://content1.rozetka.com.ua/goods/images/big/249805556.jpg" class="product-img-top" />
+            <div class="product-body text-center">
+                <h5 class="product-title">Redmi</h5>
+                <p class="product-text">
+                    Xiaomi Redmi Note 11 — гідна заміна для торішнього Redmi Note 10. Смартфон відрізняється модним «плоским» дизайном, більш енергоефективним процесором, 90 Гц AMOLED дисплеєм.
+                </p>
+            </div>
+            <div class="product-footer text-center">
+                <a asp-controller="Phone" asp-action="GetPhones" class="product-link">Список телефонів</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="product h-100">
+            <img src="https://c.ua/image/cache/catalog/VladimirGorchakov/XiaomiPocoX4GT/bla/_a129_1gfhhgf-500x500.jpg" class="product-img-top" />
+            <div class="product-body text-center">
+                <h5 class="product-title">Poco</h5>
+                <p class="product-text">Poco X4 GT — Основний дисплей: дисплей ("): 6.6; роздільна здатність екрану: 2460х1080; сенсорний екран; Gorilla Glass: Gorilla Glass v5; Співвідношення дисплей/корпус (%): 85; DCI-P3; ОС: Android 12.0; Модель процесора: Dimensity 8100; Процесор (ГГц): 2.85; Графічний процесор: ARM Mali-G610 MC6; ОЗП (ГБ): 8</p>
+            </div>
+            <div class="product-footer text-center">
+                <a asp-controller="Phone" asp-action="" class="product-link">Порівняння</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="padding: 10px;"></div>
+<div class="product">
+    <div class="product-body">
+        <h5 class="product-title">Міцний середній клас: ТОП-5 смартфонів до $250</h5>
+        <p class="product-text">
+            Сучасний смартфон середнього рівня має як мінімум 4-64 ГБ оперативної та постійної пам'яті. 
+            А за бажання можна знайти і з вдвічі більшим об'ємом. Дуже слабких процесорів вже не ставлять: нехай рекорди AnTuTu не б'ють, але і в популярних іграх не гальмують. 
+            Типовою камерою є 50 МП, доповнена ультрашироким або макро-об'єктивом. Швидка зарядка хоча б на 18 Вт додається. 
+            Ми підібрали п'ятірку смартфонів, які найточніше відповідають вище озвученим вимогам.
+        </p>
+        <a href="#" class="product-link">Product link</a>
+        <a href="#" class="product-link">Another link</a>
+    </div>
+</div>
+
+<div style="padding: 10px;"></div>
+<div class="product">
+    <div class="product-body">
+        <h5 class="product-title">Рейтинг напрямів мобільних телефонів</h5>
+    </div>
+    <ul class="list-group list-group-flush" id="ulListId">
+        <li class="list-group-item">Смартфони — 98%</li>
+        <li class="list-group-item">Флагмани — 19%</li>
+        <li class="list-group-item">Автономні смартфони — 19%</li>
+        <li class="list-group-item">Ігрові — 20%</li>
+        <li class="list-group-item">Водонепроникні — 35%</li>
+        <li class="list-group-item">Ударостійкі — 4%</li>
+        <li class="list-group-item">Камерофони — 42%</li>
+    </ul>
+    <div class="product-body">
+        <button class="btn btn-danger" id="btnHideId">Приховати</button>
+        <button class="btn btn-primary" id="btnShowId">Показати</button>
+    </div>
+</div>
+
+@section pageScripts
+    {
+    <script>
+        $('#btnHideId').click(function(){
+          $('#ulListId').hide(2000);
+        });
+
+        $('#btnShowId').click(function () {
+          $('#ulListId').show(2000);
+        });
+    </script>
+}

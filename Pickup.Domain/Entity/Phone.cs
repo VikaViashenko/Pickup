@@ -1,9 +1,5 @@
 ﻿using Pickup.Domain.Enum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pickup.Domain.Entity
 {
@@ -28,5 +24,7 @@ namespace Pickup.Domain.Entity
         public int Release { get; set; }
 
         public Features Features { get; set; }
+
+        public byte[]? Avatar { get; set; }
     }
 }

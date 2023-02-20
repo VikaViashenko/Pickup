@@ -1,0 +1,44 @@
+﻿@model Pickup.Domain.ViewModels.Account.RegisterViewModel
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Реєстрація";
+}
+
+<div style="padding: 20px;"></div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <span class="anchor"></span>
+                    <div class="product product-outline-secondary border border-white">
+                        <div class="product-header">
+                            <h3 class="mb-0 text-center paragraphHome text-black">Реєстрація</h3>
+                        </div>
+                        <div class="product-body">
+                            <form asp-controller="Account" asp-action="Register">
+                                <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger text-center"></div>
+                                <div class="form-group">
+                                    <input asp-for="Name" class="form-control textbox-dg font-weight-bold text-center" placeholder="Ім'я" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input autocomplete="new-password" asp-for="Password" placeholder="Пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                                </div>
+                                <span class="text-black" style="font-size: small; font-family:'Comic Sans MS'">Пароль повинен бути довжиною більше ніж 4 символи</span>
+                                <div class="form-group">
+                                    <input autocomplete="new-password" asp-for="ConfirmPassword" placeholder="Підтвердіть пароль" class="form-control textbox-dg font-weight-bold text-center" type="password">
+                                </div>
+                                <div>
+                                    <h2 class="paragraphHome text-center"><a asp-controller="Account" target="_blank" asp-action="Login" style="color:deepskyblue;">Вхід</a></h2>
+                                </div>
+                                <button class="btn btn-success btn-lg float-right" type="submit">Відправити</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

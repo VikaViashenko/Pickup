@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup\\Pickup.csproj": {}
+    "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup\\Pickup.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj": {
+    "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj",
         "projectName": "Pickup.DAL",
-        "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj",
+        "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj",
         "packagesPath": "C:\\Users\\Fujitsu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\obj\\",
+        "outputPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,18 +22,18 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
-                "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj"
+              "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
+                "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj"
               }
             }
           }
@@ -45,12 +45,16 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.13, )"
+              "version": "[6.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.4, )"
             }
           },
           "imports": [
@@ -73,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
+    "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj",
         "projectName": "Pickup.Domain",
-        "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj",
+        "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj",
         "packagesPath": "C:\\Users\\Fujitsu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -91,15 +95,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -110,8 +114,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
@@ -138,14 +142,14 @@
         }
       }
     },
-    "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Service\\Pickup.Service.csproj": {
+    "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Service\\Pickup.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Service\\Pickup.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Service\\Pickup.Service.csproj",
         "projectName": "Pickup.Service",
-        "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Service\\Pickup.Service.csproj",
+        "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Service\\Pickup.Service.csproj",
         "packagesPath": "C:\\Users\\Fujitsu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Service\\obj\\",
+        "outputPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -156,21 +160,21 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj": {
-                "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj"
+              "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj": {
+                "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj"
               },
-              "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
-                "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj"
+              "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
+                "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj"
               }
             }
           }
@@ -182,8 +186,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -204,14 +208,14 @@
         }
       }
     },
-    "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup\\Pickup.csproj": {
+    "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup\\Pickup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup\\Pickup.csproj",
+        "projectUniqueName": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup\\Pickup.csproj",
         "projectName": "Pickup",
-        "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup\\Pickup.csproj",
+        "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup\\Pickup.csproj",
         "packagesPath": "C:\\Users\\Fujitsu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup\\obj\\",
+        "outputPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -222,24 +226,24 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj": {
-                "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj"
+              "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj": {
+                "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.DAL\\Pickup.DAL.csproj"
               },
-              "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
-                "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj"
+              "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj": {
+                "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Domain\\Pickup.Domain.csproj"
               },
-              "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Service\\Pickup.Service.csproj": {
-                "projectPath": "C:\\Users\\Fujitsu\\source\\repos\\Pickup\\Pickup.Service\\Pickup.Service.csproj"
+              "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Service\\Pickup.Service.csproj": {
+                "projectPath": "C:\\Users\\Fujitsu\\Source\\Repos\\VikaViashenko\\Pickup\\Pickup.Service\\Pickup.Service.csproj"
               }
             }
           }
@@ -251,20 +255,20 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[5.0.13, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.13, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[6.0.4, )"
             }
           },
           "imports": [

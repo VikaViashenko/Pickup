@@ -1,17 +1,5 @@
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\bin\Debug\net5.0\Pickup.Service.deps.json
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\bin\Debug\net5.0\Pickup.Service.dll
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\bin\Debug\net5.0\Pickup.Service.pdb
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\bin\Debug\net5.0\Pickup.DAL.dll
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\bin\Debug\net5.0\Pickup.Domain.dll
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\bin\Debug\net5.0\Pickup.DAL.pdb
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\bin\Debug\net5.0\Pickup.Domain.pdb
 C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.csproj.AssemblyReference.cache
 C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.AssemblyInfoInputs.cache
 C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.AssemblyInfo.cs
 C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.csproj.CoreCompileInputs.cache
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.csproj.CopyComplete
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.dll
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\refint\Pickup.Service.dll
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\Pickup.Service.pdb
-C:\Users\Fujitsu\source\repos\Pickup\Pickup.Service\obj\Debug\net5.0\ref\Pickup.Service.dll

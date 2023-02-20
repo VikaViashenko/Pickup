@@ -12,7 +12,7 @@ namespace Pickup.Service.Interfaces
 
         Task<IBaseResponse<PhoneViewModel>> GetPhone(int id);
 
-        Task<IBaseResponse<PhoneViewModel>> CreatePhone(PhoneViewModel phoneViewModel);
+        Task<IBaseResponse<Phone>> CreatePhone(PhoneViewModel phoneViewModel, byte[] imageData);
 
         Task<IBaseResponse<bool>> DeletePhone(int id);
 

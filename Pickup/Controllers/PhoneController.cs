@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Pickup.Domain.ViewModels.Phone;
 using Pickup.Service.Interfaces;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Pickup.Controllers
 {
@@ -24,7 +25,7 @@ namespace Pickup.Controllers
             {
                 return View(response.Data.ToList());
             }
-            return RedirectToAction("Error");
+            return View("Error, ${response.Description}");
         }
 
         [HttpGet]
@@ -35,10 +36,10 @@ namespace Pickup.Controllers
             {
                 return View(response.Data);
             }
-            return RedirectToAction("Error");
+            return View("Error, ${response.Description}");
         }
 
-        /*[Authorize(Roles = "Admin")]*/
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var response = await _phoneService.DeletePhone(id);
@@ -46,12 +47,12 @@ namespace Pickup.Controllers
             {
                 return RedirectToAction("GetPhones");
             }
-            return RedirectToAction("Error");
+            return View("Error, ${response.Description}");
         }
 
         [HttpGet]
         /*[Authorize(Roles = "Admin")]*/
-        public async Task<ActionResult> Save(int id)
+        public async Task<IActionResult> Save(int id)
             //передається id, якщо id = 0 то ми будем добавляти новий об'єкт в нашу базу даних. якщо id не буде дорівнювати нулю то ми будем редагувати вже існуючий запис за вказаним id.
         {
             if (id == 0)
@@ -63,24 +64,31 @@ namespace Pickup.Controllers
             {
                 return View(response.Data);
             }
-            return RedirectToAction("Error");
+            return View("Error, ${response.Description}");
         }
 
         [HttpPost]
         public async Task<IActionResult> Save(PhoneViewModel model)
         {
+            ModelState.Remove("DataCreate");
             if (ModelState.IsValid)
             {
                 if (model.id == 0)
                 {
-                    await _phoneService.CreatePhone(model);
+                    byte[] imageData;
+                    using (var binaryReader = new BinaryReader(model.Avatar.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)model.Avatar.Length);
+                    }
+                    await _phoneService.CreatePhone(model, imageData);
                 }
                 else
                 {
                     await _phoneService.Edit(model.id, model);
                 }
+                return RedirectToAction("GetPhones");
             }
-            return RedirectToAction("GetPhones");
+            return View();
         }
 
 
